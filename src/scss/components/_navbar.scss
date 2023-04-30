@@ -1,0 +1,50 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    background-color: rgba(255, 255, 255, 0.966);
+    border-bottom: 2px solid;
+    border-color: #0000001a;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 3px 3px 10px #00000045;
+    padding: 5px 15px;
+    div{       
+        a{
+            img{
+                width: 110px;
+                padding: 10px;
+                transition: 0.5s ease all;
+                    &:hover{
+                        transform: scale(1.10);
+                    }
+                }
+        }
+        .navBarButton{
+            display: flex;
+            flex-grow: 1;
+            justify-content: flex-end;
+            margin-right: 15px;
+        }
+        div {
+            ul{
+                .nav-item{
+                    .nav-link{
+                        font-size: 2rem;
+                        color: nth($colors, 2);
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.carWidget{
+    img{
+        width: 40px;
+    }
+    span{
+        font-size: 1.5rem;
+    }
+}

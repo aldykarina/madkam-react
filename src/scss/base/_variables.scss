@@ -1,0 +1,20 @@
+$fontfamily: 'Lemonada', cursive;
+
+$colors:
+#FFFFFF, //1
+#F96565,
+#5A83EE,  //3
+#9FF5AC,
+#EAE7A3,  //5
+#FFD1A0,
+#9B8BEB,  // 7
+#E2E2E2,
+#000000;  // 9
+
+@mixin display($display, $justify, $align, $direction, $padding){
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    padding: $padding;
+}
