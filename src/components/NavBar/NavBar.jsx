@@ -34,11 +34,3 @@ export default function NavBar(){
     </nav>
     )
 }
-
-
-
-/* <h3>MADKAM</h3>
-        <ul>
-            <li><a href=""></a>Remeras</li>
-            <li><a href=""></a>Tazas</li>
-        </ul> */
