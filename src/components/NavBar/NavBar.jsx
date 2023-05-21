@@ -1,15 +1,15 @@
 import CartWidget from "../CartWidget/CartWidget"
 import logoMadkam from '../../assets/logomadkam.png'
-import { NavLink, Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 export default function NavBar(){
     
     return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+            <NavLink className="navbar-brand" to="/">
                 <img src={logoMadkam} alt="Logo Madkam, pulpo de colores" />
-            </Link>
+            </NavLink>
             <div className="navBarButton">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@ export default function NavBar(){
             <div className="collapse navbar-collapse flex-grow-0" id="navbarNav">
                 <ul className="navbar-nav fw-bold align-items-center">
                     <li className="nav-item dropdown">
-                        <NavLink className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <NavLink className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Productos
                         </NavLink>
                         <ul className="dropdown-menu">

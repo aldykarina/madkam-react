@@ -1,5 +1,5 @@
 import ItemCount from '../ItemCount/ItemCount'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Item({id, name, img, price, stock}) {
   return (
@@ -14,7 +14,7 @@ export default function Item({id, name, img, price, stock}) {
           <p>stock disponible: {stock}</p>
         </div>
         <button className='btnDetalle'>
-          <Link to={`/item/${id}`}> Ver detalles</Link>
+          <NavLink to={`/item/${id}`}> Ver detalles</NavLink>
         </button>
     </article>
   )

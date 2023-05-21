@@ -1,3 +1,15 @@
+.saludo{
+    background-color: nth($colors, 3);
+    width: 100%;
+    h1{
+        color: nth($colors, 1);
+        font-size: 2.5rem;
+        &:hover{
+            transform: scale(1.4);
+        }
+        @include display (flex,center,center,none, 5px);
+    }
+}
 .itemDetail{
     @include display (flex,center,center,row,0);
     img{

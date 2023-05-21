@@ -34,6 +34,9 @@
                         color: nth($colors, 2);
                         padding: 15px;
                     }
+                    .dropdown-menu[data-bs-popper]{
+                        margin-top: 0;
+                    }
                     .dropdown-menu.show{
                         display: flex;
                         justify-content: center;
