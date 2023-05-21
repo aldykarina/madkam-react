@@ -5,8 +5,6 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-
-
 function App() {
   return (
     <div className='App'>
@@ -25,6 +23,3 @@ function App() {
 }
 
 export default App
-
-//  ItemCount, proximamente Va dentro del detalle del producto
-{/* <ItemDetailContainer prodId={3}/> */}

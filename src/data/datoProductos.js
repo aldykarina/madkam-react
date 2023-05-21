@@ -14,7 +14,7 @@ const products = [
         price: 3600,
         category: 'Remeras Personalizadas',
         img: '/src/assets/imgProducts/producto02.png',
-        stock: 1,
+        stock: 5,
         description: 'Remeras sublimadas personalizadas para niños'
     },
     {
@@ -32,7 +32,7 @@ const products = [
         price: 2300,
         category: 'Remeras Personalizadas',
         img: '/src/assets/imgProducts/producto04.png',
-        stock: 1,
+        stock: 19,
         description: 'Remeras estampadas personalizadas'
     },
     {
@@ -50,7 +50,7 @@ const products = [
         price: 2300,
         category: 'Remeras Personalizadas',
         img: '/src/assets/imgProducts/producto06.png',
-        stock: 1,
+        stock: 5,
         description: 'Remeras sublimadas personalizadas'
     },
     {
@@ -77,7 +77,7 @@ const products = [
         price: 2300,
         category: 'Remeras Personalizadas',
         img: '/src/assets/imgProducts/producto09.png',
-        stock: 1,
+        stock: 7,
         description: 'Remeras estampadas personalizadas'
     },
     {
@@ -86,7 +86,7 @@ const products = [
         price: 2300,
         category: 'Tazas',
         img: '/src/assets/imgProducts/producto10.png',
-        stock: 1,
+        stock: 10,
         description: 'Tazas de Cerámica personalizadas'
     },
     {
@@ -95,7 +95,7 @@ const products = [
         price: 2300,
         category: 'Tazas',
         img: '/src/assets/imgProducts/producto11.png',
-        stock: 1,
+        stock: 3,
         description: 'Tazas Mágicas de Cerámica personalizadas'
     },
     {
@@ -127,12 +127,3 @@ export default function getProductById(productId) {
   }
   )
 }
-
-/* export const getProductByCategory = (categoryId) => {
-    return new Promise ( (resolve) =>{
-      setTimeout(()=> {
-          resolve (products.filter(categ => categ.category === categoryId))
-      }, 500)
-    }
-    )
-  } */

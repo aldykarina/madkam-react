@@ -2,7 +2,7 @@ import ItemCount from '../ItemCount/ItemCount'
 
 export default function ItemDetail({ id, name, img, category, description, price, stock}) {
   return (
-   <article >
+   <article>
       <div className="saludo">
         <h1>Producto Personalizable</h1>
       </div>

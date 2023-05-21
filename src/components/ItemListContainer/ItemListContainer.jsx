@@ -5,8 +5,6 @@ import { getProducts } from "../../data/datoProductos"
 import { useParams } from "react-router-dom"
 
 
-
-
 const ItemmListContainer = ({ greeting }) =>{
     const [products, setProducts] = useState([]);
     const [titulo, setTitulo] = useState("Productos");
@@ -27,8 +25,6 @@ const ItemmListContainer = ({ greeting }) =>{
     }, [categoryId]) 
     
 
-
-
     return(
         <div className="hero">
             <div className="saludo">
@@ -43,47 +39,3 @@ const ItemmListContainer = ({ greeting }) =>{
 }
 
 export default ItemmListContainer
-
-
-
-
-
-/* 
-const ItemmListContainer = ({ greeting }) =>{
-    const [products, setProducts] = useState([])
-
-    useEffect(()=>{
-      
-        
-        getProducts()
-            .then(response => {
-                setProducts(response)
-            })
-            .catch(error =>{
-                console.error(error)
-            })
-    }, []) 
-    
-    
-    
-    
-    
-    
-    const ItemmListContainer = ({ greeting }) =>{
-    const [products, setProducts] = useState([])
-
-    const { categoryId } = useParams()
-
-
-    useEffect(()=>{
-        const asyncFunc = categoryId ? getProductByCategory : getProducts
-        
-        
-        asyncFunc(categoryId)
-            .then(response => {
-                setProducts(response)
-            })
-            .catch(error =>{
-                console.error(error)
-            })
-    }, [categoryId])*/

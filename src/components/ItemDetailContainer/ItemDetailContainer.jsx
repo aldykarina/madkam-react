@@ -24,17 +24,3 @@ export default function ItemDetailContainer() {
     </div>
   )
 }
-
-
-/* 
-const [product, setProduct] = useState(null);
-
-useEffect(()=>{
-  getProductById(prodId)
-    .then(response => {
-        setProduct(response)
-    })
-    .catch(error => {
-        console.error(error) 
-    })
-}, []) */
