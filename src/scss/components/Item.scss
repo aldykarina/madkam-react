@@ -1,0 +1,42 @@
+.itemCard{
+    @include display (flex,space-between,center,column,0);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    div{
+        h2{
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2rem;
+            height: 15%;
+        }
+        img{
+            height: 300px;
+        }
+        p{
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+    .divItemCount{
+        @include display (flex,center,center,column,0);
+        border-radius: 5px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        width: -webkit-fill-available;
+        margin: 15px;
+        padding: 15px 0px 0px;
+        p{
+            font-size: 1.5rem;
+            padding: 15px 0px 10px;
+            font-style: italic;
+        }
+    }
+    .btnDetalle{
+        @extend %botonCompra;
+        a{
+            text-decoration: none;
+            color: nth($colors , 1 );
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.contenedorItemListTitulo{
+    border-bottom: 1px solid;
+    border-color: nth($colors , 2 );
+    h2{
+       text-align: center;
+       padding: 10px;
+       font-size: 2rem;
+       color: nth($colors , 2 )
+    }
+}
+.contenedorItemList{
+    @include grid(grid,repeat(4, 1fr),auto,40px,30px);
+}

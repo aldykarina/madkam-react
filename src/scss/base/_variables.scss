@@ -18,3 +18,25 @@ $colors:
     flex-direction: $direction;
     padding: $padding;
 }
+
+@mixin grid($display,$columns,$rows,$gap,$margin){
+    display: $display;
+    grid-template-columns:$columns ;
+    grid-template-rows:$rows ;
+    gap:$gap ;
+    margin:$margin;
+}
+
+%botonCompra{
+    text-decoration: none;
+    text-align: center;
+    color: nth($colors, 1) ;
+    background-color: nth($colors, 2);
+    padding: 2px 15px 2px 15px ;
+    margin: 0 0 5px 0;
+    border-radius: 10px;
+    &:hover{
+        color: nth($colors, 8);
+        background-color: nth($colors, 3);
+    }
+}
