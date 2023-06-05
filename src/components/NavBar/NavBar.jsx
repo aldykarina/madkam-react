@@ -29,7 +29,7 @@ export default function NavBar(){
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="#">Contacto</NavLink>
+                        <NavLink to="/contacto" className="nav-link">Contacto</NavLink>
                     </li>
                         <li className="nav-item">
                             <button className="nav-link"> Ingresar</button>

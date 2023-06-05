@@ -1,18 +1,21 @@
 import { NavLink } from 'react-router-dom'
 
-export default function Item({id, name, img, price, stock}) {
+export default function Item({producto}) {
+  
+/*   {id, name, img, price, stock} */
+
   return (
     <article className="itemCard">
         <div>
-          <h2>{name}</h2>
-          <img src={img} alt={name} />
-          <p>${price}</p>
+          <h2>{producto.name}</h2>
+          <img src={producto.img} alt={producto.name} />
+          <p>${producto.price}</p>
         </div>
         <button className='btnDetalle'>
-          <NavLink to={`/item/${id}`}> Ver detalles</NavLink>
+          <NavLink to={`/item/${producto.id}`}> Ver detalles</NavLink>
         </button>
         <div className='divItemStock'>
-          <p>stock disponible: {stock}</p>
+          <p>stock disponible: {producto.stock}</p>
         </div>
     </article>
   )

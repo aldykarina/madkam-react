@@ -7,7 +7,6 @@ export default function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
 
   const { prodId } = useParams();
-
   useEffect(()=>{
     getProductById(Number(prodId))
       .then(response => {
@@ -17,10 +16,17 @@ export default function ItemDetailContainer() {
           console.error(error) 
       })
   }, [prodId])
+
   
   return (
     <div>
-        <ItemDetail {...product} />
+      {product && <ItemDetail product={product} /> }
     </div>
   )
 }
+
+/* return (
+  <div>
+      <ItemDetail {...product} />
+  </div>
+) */
