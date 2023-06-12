@@ -10,9 +10,6 @@ export default function ItemCount({stock, onAdd}) {
   const subtract = () =>{
       count > 1 && setCount(count -1);
   }
-/*   const onAdd = () => {
-    console.log({...product, count})
-  } */
 
 
   let disableSub = count === 1;

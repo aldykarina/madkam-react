@@ -4,7 +4,7 @@ const products = [
         name: 'Remera Sublimada Personalizada',
         price: 2600,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto01.png',
+        img: '/assets/imgProducts/producto01.png',
         stock: 5,
         description: 'Remeras sublimadas personalizadas de Spun'
     },
@@ -13,7 +13,7 @@ const products = [
         name: 'Remera Ant-man',
         price: 3600,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto02.png',
+        img: '/assets/imgProducts/producto02.png',
         stock: 5,
         description: 'Remeras sublimadas personalizadas para niños'
     },
@@ -22,7 +22,7 @@ const products = [
         name: 'Sudadera Sandia',
         price: 2300,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto03.png',
+        img: '/assets/imgProducts/producto03.png',
         stock: 7,
         description: 'Remeras sublimadas personalizadas'
     },
@@ -31,7 +31,7 @@ const products = [
         name: 'Remera Mafalda',
         price: 2300,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto04.png',
+        img: '/assets/imgProducts/producto04.png',
         stock: 19,
         description: 'Remeras estampadas personalizadas'
     },
@@ -40,7 +40,7 @@ const products = [
         name: 'Remera Delfin',
         price: 2300,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto05.png',
+        img: '/assets/imgProducts/producto05.png',
         stock: 2,
         description: 'Remeras estampadas personalizadas'
     },
@@ -49,7 +49,7 @@ const products = [
         name: 'Remera Pizza',
         price: 2300,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto06.png',
+        img: '/assets/imgProducts/producto06.png',
         stock: 5,
         description: 'Remeras sublimadas personalizadas'
     },
@@ -58,7 +58,7 @@ const products = [
         name: 'Remera Blink-182',
         price: 3600,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto07.png',
+        img: '/assets/imgProducts/producto07.png',
         stock: 1,
         description: 'Remeras estampadas personalizadas'
     },
@@ -67,7 +67,7 @@ const products = [
         name: 'Remera Imagine Dragons',
         price: 2300,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto08.png',
+        img: '/assets/imgProducts/producto08.png',
         stock: 3,
         description: 'Remeras estampadas personalizadas'
     },
@@ -76,7 +76,7 @@ const products = [
         name: 'Remera The last of us',
         price: 2300,
         category: 'Remeras Personalizadas',
-        img: '/src/assets/imgProducts/producto09.png',
+        img: '/assets/imgProducts/producto09.png',
         stock: 7,
         description: 'Remeras estampadas personalizadas'
     },
@@ -85,7 +85,7 @@ const products = [
         name: 'Taza Personalizadas',
         price: 2300,
         category: 'Tazas',
-        img: '/src/assets/imgProducts/producto10.png',
+        img: '/assets/imgProducts/producto10.png',
         stock: 10,
         description: 'Tazas de Cerámica personalizadas'
     },
@@ -94,7 +94,7 @@ const products = [
         name: 'Taza mágica Harry Potter',
         price: 2300,
         category: 'Tazas',
-        img: '/src/assets/imgProducts/producto11.png',
+        img: '/assets/imgProducts/producto11.png',
         stock: 3,
         description: 'Tazas Mágicas de Cerámica personalizadas'
     },
@@ -103,7 +103,7 @@ const products = [
         name: 'Taza mapa mundo',
         price: 2300,
         category: 'Tazas',
-        img: '/src/assets/imgProducts/producto12.png',
+        img: '/assets/imgProducts/producto12.png',
         stock: 2,
         description: 'Tazas de Cerámica personalizadas'
     }

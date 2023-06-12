@@ -65,10 +65,26 @@
 }
 
 .carWidget{
-    img{
-        width: 40px;
+    a{
+        text-decoration: none;
+        .carWidgetImg{
+            width: 70px;
+        }
+        .carWidgetConter{
+            font-size: 1.2rem;
+            position: absolute;
+            right: 8px;
+            top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
     }
-    span{
-        font-size: 1.5rem;
-    }
+    
 }

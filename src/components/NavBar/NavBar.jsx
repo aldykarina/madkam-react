@@ -1,5 +1,5 @@
 import CartWidget from "../CartWidget/CartWidget"
-import logoMadkam from '../../assets/logomadkam.png'
+import logoMadkam from '/assets/logomadkam.png'
 import { NavLink } from "react-router-dom"
 
 export default function NavBar(){

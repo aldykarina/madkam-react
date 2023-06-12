@@ -5,9 +5,9 @@ import CartItem from "../CartItem/CartItem"
 
 export default function Cart() {
 
-    const { cart, clearCart, totalCount, total} = useContext(CartContext)
+    const { cart, clearCart, totalCount, totalPrice} = useContext(CartContext)
 
-    if (totalCount() === 0){
+/*     if (totalCount() === 0){
         return(
            <div>
                 <h1>El carrito esta vacio :/ </h1>
@@ -15,14 +15,30 @@ export default function Cart() {
            </div>
         )
     }
+ */
 
   return (
-    <div className="itemCard">
-        <h1>Carrito</h1>
-        { cart.map (product => <CartItem key={product.id} {...product}/>)}
-        <h3>Precio Total: ${total()}</h3>
-        <button className='btnDetalle' onClick={clearCart} >Vaciar Carrito</button>
-        <Link to="/checkout" >Checkout</Link>
-    </div>
+    <>
+    { totalCount() === 0 ? 
+      (
+        <div>
+          <h1>El carrito esta vacio :/ </h1>
+          <Link to="/" >Productos</Link>
+        </div>
+      ) : 
+      
+      (
+        <div className="itemCard">
+          <h1>Carrito</h1>
+
+          { cart.map (product => <CartItem key={product.id} {...product}/>)}
+
+          <h3>Precio Total: ${totalPrice()}</h3>
+          <button className='btnDetalle' onClick={clearCart} >Vaciar Carrito</button>
+          <Link to="/checkout" >Checkout</Link>
+        </div>
+      )
+    }
+    </>
   )
 }

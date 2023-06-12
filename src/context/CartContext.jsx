@@ -1,14 +1,11 @@
 import { createContext, useEffect, useState } from "react"
 
 
-export const CartContext = createContext({
-  cart: []
-})
-
-const cartInicial = JSON.parse(localStorage.getItem("cart")) ||  [];
+export const CartContext = createContext({  cart: []  })
+const cartInicial = JSON.parse(localStorage.getItem("cart")) || [];
 
 
-export default function CartProvider({children}) {
+export function CartProvider({children}) {
 
     const [cart, setCart] =useState(cartInicial)
 
@@ -20,21 +17,48 @@ export default function CartProvider({children}) {
 
         if(!isInCart(itemAdd.id)){
             setCart(prev => [...prev, {...itemAdd, count}])
+            console.log("agregaste producto, twstify")
+
+        } else {
+            setCart(prev => prev.map(item => {
+                if (item.id === itemAdd.id) {
+                    return { ...item, count: item.count + count };
+                }
+                return item;
+                
+            }));
+        }
+    }
+
+    console.log(cart);
+    
+
+    /* 
+    const addItem = (itemAdd, count) => {
+
+        if(!isInCart(itemAdd.id)){
+            setCart(prev => [...prev, {...itemAdd, count}])
         } else {
             console.log("El producto ya fue agregado")
         }      
-    }
-
+    } 
+    */
 
     const removeItem = (itemId) => {
         const cartUpdated = cart.filter(prod => prod.id !== itemId)
         setCart(cartUpdated)
+        
+        /* const updatedCart = [...cart]; 
+        updatedCart.splice(itemId, 1); 
+        setCart(updatedCart); */
     }
 
     const clearCart = () => {
         setCart([])
     }
 
+    
+    /* REVISAAAAR */
     const isInCart = (itemId) => {
         return cart.some(prod  => prod.id === itemId)
     }
@@ -43,7 +67,7 @@ export default function CartProvider({children}) {
         return cart.reduce((acc, prod) => acc + prod.count, 0)
     }
 
-    const total = ()=>{
+    const totalPrice = ()=>{
         return cart.reduce((acc, prod) => acc + prod.price * prod.count, 0)
     }
 
@@ -57,7 +81,7 @@ export default function CartProvider({children}) {
         removeItem, 
         clearCart, 
         totalCount, 
-        total}}>
+        totalPrice}}>
 
         {children}
     </CartContext.Provider>

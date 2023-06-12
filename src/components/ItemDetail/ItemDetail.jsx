@@ -9,20 +9,24 @@ export default function ItemDetail( {product} ) {
 
   const [countAdd, setCountAdd] = useState(0);
 
-
-
   const { addItem } = useContext(CartContext)
 
   const handleOnAdd = (count) => {
     setCountAdd(count)
-
-
     const itemAdd = {...product} 
 
     addItem(itemAdd, count)
     
   }
 
+/* 
+  const handleOnAdd = (count) => {
+    setCountAdd(count)
+    const itemAdd = {...product} 
+
+    addItem(itemAdd, count)
+    
+  } */
 
 
   return (
