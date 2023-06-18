@@ -120,10 +120,27 @@ export const getProducts = () => {
 }
 
 export default function getProductById(productId) {
-  return new Promise ( (resolve) =>{
+  return new Promise ( (resolve, reject) =>{
     setTimeout(()=> {
-        resolve (products.find(produ => produ.id === productId))
+        const requestedItem = products.find(produ => produ.id === productId);
+
+        if (requestedItem){
+            resolve(requestedItem);
+        } else {
+            reject(new Error("Producto no encontrado"));
+        }
     }, 500)
   }
   )
 }
+
+
+/* export default function getProductById(productId) {
+    return new Promise ( (resolve, reject) =>{
+      setTimeout(()=> {
+  
+          resolve ( products.find(produ => produ.id === productId))
+      }, 500)
+    }
+    )
+  } */

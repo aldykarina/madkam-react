@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom"
 
 
 const ItemmListContainer = ({ greeting }) =>{
+    let [isloading, setIsLoading] = useState(true);
+
     const [products, setProducts] = useState([]);
     const [titulo, setTitulo] = useState("Productos");
     const { categoryId } = useParams();
@@ -22,6 +24,7 @@ const ItemmListContainer = ({ greeting }) =>{
             .catch(error =>{
                 console.error(error)
             })
+            .finally( ()=>{setIsLoading(false)})
     }, [categoryId]) 
     
 
@@ -31,7 +34,7 @@ const ItemmListContainer = ({ greeting }) =>{
                 <h1>{greeting}</h1>
             </div> 
             <div>
-                <ItemList products={products} tituloCateg={titulo} />
+                <ItemList products={products} tituloCateg={titulo} isloading={isloading}/>
             </div>
         </div>
     )

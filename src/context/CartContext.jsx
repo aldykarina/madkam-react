@@ -14,12 +14,35 @@ export function CartProvider({children}) {
     },[cart])
 
     const addItem = (itemAdd, count) => {
+        let updateCart = [];
+
+        if(!isInCart(itemAdd.id)){
+            updateCart = [...cart, {...itemAdd, count}]
+            console.log("agregaste producto, twstify")
+
+        } else { 
+            updateCart = cart.map(item => {
+                if (item.id === itemAdd.id){
+                    return { ...item, count: item.count + count };
+                }
+                return item;
+            });
+        }
+        
+        setCart(updateCart);
+    }
+
+    console.log(cart);
+    
+
+    /* 
+ const addItem = (itemAdd, count) => {
 
         if(!isInCart(itemAdd.id)){
             setCart(prev => [...prev, {...itemAdd, count}])
             console.log("agregaste producto, twstify")
 
-        } else {
+        } else { 
             setCart(prev => prev.map(item => {
                 if (item.id === itemAdd.id) {
                     return { ...item, count: item.count + count };
@@ -28,20 +51,8 @@ export function CartProvider({children}) {
                 
             }));
         }
+
     }
-
-    console.log(cart);
-    
-
-    /* 
-    const addItem = (itemAdd, count) => {
-
-        if(!isInCart(itemAdd.id)){
-            setCart(prev => [...prev, {...itemAdd, count}])
-        } else {
-            console.log("El producto ya fue agregado")
-        }      
-    } 
     */
 
     const removeItem = (itemId) => {
