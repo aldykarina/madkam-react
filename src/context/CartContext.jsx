@@ -1,4 +1,6 @@
 import { createContext, useEffect, useState } from "react"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const CartContext = createContext({  cart: []  })
@@ -13,13 +15,14 @@ export function CartProvider({children}) {
         localStorage.setItem("cart", JSON.stringify(cart))
     },[cart])
 
+
+
+
     const addItem = (itemAdd, count) => {
         let updateCart = [];
-
         if(!isInCart(itemAdd.id)){
             updateCart = [...cart, {...itemAdd, count}]
-            console.log("agregaste producto, twstify")
-
+            
         } else { 
             updateCart = cart.map(item => {
                 if (item.id === itemAdd.id){
@@ -28,32 +31,20 @@ export function CartProvider({children}) {
                 return item;
             });
         }
-        
-        setCart(updateCart);
-    }
+        setCart(updateCart)
 
-    console.log(cart);
-    
-
-    /* 
- const addItem = (itemAdd, count) => {
-
-        if(!isInCart(itemAdd.id)){
-            setCart(prev => [...prev, {...itemAdd, count}])
-            console.log("agregaste producto, twstify")
-
-        } else { 
-            setCart(prev => prev.map(item => {
-                if (item.id === itemAdd.id) {
-                    return { ...item, count: item.count + count };
-                }
-                return item;
-                
-            }));
-        }
+        toast.success('¡Producto agregado al carrito!',{
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true, 
+            theme: "colored"           
+        } );
 
     }
-    */
+
+
+
 
     const removeItem = (itemId) => {
         const cartUpdated = cart.filter(prod => prod.id !== itemId)
@@ -69,7 +60,6 @@ export function CartProvider({children}) {
     }
 
     
-    /* REVISAAAAR */
     const isInCart = (itemId) => {
         return cart.some(prod  => prod.id === itemId)
     }

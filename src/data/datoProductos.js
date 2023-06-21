@@ -109,38 +109,4 @@ const products = [
     }
 ]
 
-
-
-export const getProducts = () => {
-    return new Promise ((resolve) =>{
-        setTimeout(()=>{
-            resolve(products)
-        },500)
-    })
-}
-
-export default function getProductById(productId) {
-  return new Promise ( (resolve, reject) =>{
-    setTimeout(()=> {
-        const requestedItem = products.find(produ => produ.id === productId);
-
-        if (requestedItem){
-            resolve(requestedItem);
-        } else {
-            reject(new Error("Producto no encontrado"));
-        }
-    }, 500)
-  }
-  )
-}
-
-
-/* export default function getProductById(productId) {
-    return new Promise ( (resolve, reject) =>{
-      setTimeout(()=> {
-  
-          resolve ( products.find(produ => produ.id === productId))
-      }, 500)
-    }
-    )
-  } */
+export default products;

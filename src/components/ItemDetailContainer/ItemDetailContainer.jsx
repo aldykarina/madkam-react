@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
-import getProductById from "../../data/datoProductos"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import { getProductById } from "../../services/firebase";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
+
+
 
 export default function ItemDetailContainer() {
   const [errors, setErrors] = useState(null)
@@ -10,7 +12,7 @@ export default function ItemDetailContainer() {
 
   const { prodId } = useParams();
   useEffect(()=>{
-    getProductById(Number(prodId))
+    getProductById(prodId)
       .then(response => {
           setProduct(response)
       })
@@ -38,4 +40,34 @@ export default function ItemDetailContainer() {
   <div>
       <ItemDetail {...product} />
   </div>
-) */
+)
+
+import getProductById from "../../data/datoProductos"
+
+const { prodId } = useParams();
+  useEffect(()=>{
+    getProductById(Number(prodId))
+      .then(response => {
+          setProduct(response)
+      })
+      .catch(error => {
+          setErrors(error.message)
+      })
+  }, [prodId])
+
+
+
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../services/firebase";
+
+    useEffect(()=>{
+    
+    const docRef = doc(db, "productos", prodId);
+    getDoc(docRef)
+      .then((res)=>{
+        setProduct({...res.data(), id: res.id});
+      })
+
+  }, [prodId])
+
+*/
