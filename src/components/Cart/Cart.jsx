@@ -45,7 +45,7 @@ export default function Cart() {
       if(respuesta){
         clearCart()
         swal({
-          text: "El carrito se ha eliminado con éxito. Te esperamos pronto",
+          text: "El carrito se ha eliminado con éxito. ¡Te esperamos pronto!",
           icon: "success"
         })
       }
