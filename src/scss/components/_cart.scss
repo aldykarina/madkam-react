@@ -1,0 +1,119 @@
+.cart {
+    border-spacing: 0;
+    border-radius: 10px;
+    border: solid 2px nth($colors , 3 ); 
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0px 0px 10px #1e1c1c5d;
+    .cartTitle{
+        background-color: nth($colors , 8 );
+        margin: 8px auto;
+        color: nth($colors , 3 );
+    }
+    .cartRows{
+        line-height: 60px;
+        th{
+            font-size: 2rem;
+            text-align: start;
+        }
+        td{
+            font-size: 2rem;
+            text-align: start;
+        }
+        .imgCarrito{
+            text-align: center;
+            img{
+                height: 100px;
+                margin: 10px;
+            }
+        }
+        
+        .btnEliminar{
+            background-color: nth($colors , 8 );
+            color: nth($colors , 9 );
+            width: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}
+
+.cartFinal{
+    margin-top: 35px;
+    color: nth($colors , 2 );
+    text-align: center;
+    line-height: 1.5rem;
+    width: 100%;
+    h3{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .btnDetalle{
+        margin-top: 10px;
+        @extend %botonCompra;
+    }
+}
+
+.divVaciar{
+    @include display (flex,center,end,column,0);
+    width: 95%;
+    .btnVaciar{
+        text-decoration: none;
+        text-align: center;
+        color: nth($colors, 9) ;
+        background-color: nth($colors, 8);
+        padding: 10px 10px ;
+        border-radius: 10px;
+        font-size: 2rem;
+        &:hover{
+            color: nth($colors, 1);
+            background-color: nth($colors, 9);
+        }
+    }
+}
+
+.checkout{
+    border-spacing: 0;
+    border-radius: 10px;
+    border: solid 2px nth($colors , 3 ); 
+    width: 90%;
+    margin: 55px auto;
+    text-align: center;
+    box-shadow: 0px 0px 10px #1e1c1c5d;
+    padding: 20px;
+    .checkoutInput{
+        input{
+           background-color: nth($colors , 8 );
+           border-radius: 1rem;
+           width: 85%;
+           outline: none;
+           border: none;
+           box-shadow: none;
+           display: block;
+           padding : 8px 14px;
+           margin: 15px auto 20px;
+           font-size: 1.5rem; 
+        }
+        .spanIzq{
+            margin: 0px 10% ;
+            display: flex;
+            justify-content: initial
+        }
+    }
+    .checkoutFin{
+        @include display (flex,center,unset,column,0);
+        font-size: 1.5rem;
+        span{
+            padding: 10px;
+        }
+        .spanIzq{
+            margin: 0px 10% ;
+            display: flex;
+            justify-content: initial
+        }
+        button{
+            padding: 10px;
+        }
+    }
+}

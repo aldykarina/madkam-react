@@ -8,8 +8,6 @@ import { CartProvider } from './context/CartContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import OrderConfirm from './components/OrderConfirm/OrderConfirm';
-import { exportData } from './services/helpers';
-
 
 
 function App() {

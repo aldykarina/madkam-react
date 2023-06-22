@@ -81,10 +81,27 @@
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background-color: red;
-            color: white;
+            background-color: nth($colors , 2);
+            color: nth($colors , 1);
             font-weight: bold;
         }
     }
+    
+}
+
+.linkInicio{
+    @include display (flex,center,center,column,0);
+    @extend %botonLink;
+    padding: 20px 0px;
+    font-size: 3rem;
+    font-style:normal;  
+}
+
+.divLinkcito{
+    @include display (flex,center,center,column,0);
+    padding: 0px 0px;
+    height: 50vh;
+    font-size: 2rem;
+    font-style: italic;
     
 }

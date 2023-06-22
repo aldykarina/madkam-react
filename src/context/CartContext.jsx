@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react"
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -49,10 +49,6 @@ export function CartProvider({children}) {
     const removeItem = (itemId) => {
         const cartUpdated = cart.filter(prod => prod.id !== itemId)
         setCart(cartUpdated)
-        
-        /* const updatedCart = [...cart]; 
-        updatedCart.splice(itemId, 1); 
-        setCart(updatedCart); */
     }
 
     const clearCart = () => {

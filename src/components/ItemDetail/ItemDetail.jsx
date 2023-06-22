@@ -8,7 +8,6 @@ import { CartContext } from "../../context/CartContext"
 export default function ItemDetail( {product} ) {
 
   const [countAdd, setCountAdd] = useState(0);
-
   const { addItem } = useContext(CartContext)
 
   const handleOnAdd = (count) => {
@@ -18,16 +17,6 @@ export default function ItemDetail( {product} ) {
     addItem(itemAdd, count)
     
   }
-
-/* 
-  const handleOnAdd = (count) => {
-    setCountAdd(count)
-    const itemAdd = {...product} 
-
-    addItem(itemAdd, count)
-    
-  } */
-
 
   return (
     <article>
@@ -46,7 +35,7 @@ export default function ItemDetail( {product} ) {
            <div className='divItemCount'>
             {
               countAdd > 0 ? (
-                <Link to="/cart" >Terminar Compra</Link>
+                <Link className='linkInicio' to="/cart" >Terminar Compra</Link>
               ) : (
                 <ItemCount stock={product.stock} onAdd={handleOnAdd}/>
               )

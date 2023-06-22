@@ -6,16 +6,17 @@ export default function CartItem(product) {
   const { removeItem } = useContext(CartContext)
 
   return (
-    <div className='itemDetail'>
-      <img src={product.img} alt={product.name} />
-      <div>
-        <div className='itemDescription'>
-          <h2 className='iTitulo'>{product.name}</h2>
-          <p className='iPrecio'>Cantidad: {product.count} x unidad ${product.price}</p>
-          <p className='iPrecio'>Precio total ${product.price * product.count}</p>
-          <button className='btnDetalle' onClick={() => removeItem(product.id)} >Eliminar producto</button>
-        </div>
-      </div>
-    </div>
+    <tr className='cartRows'>
+      <td className="imgCarrito">
+        <img  src={product.img} alt={product.name} />
+      </td>  
+      <td>{product.name}</td>
+      <td>{product.price}</td>
+      <td>{product.count}</td>
+      <td>{product.price * product.count}</td>
+      <td>
+        <button className='btnEliminar' onClick={() => removeItem(product.id)} >X</button>
+      </td>
+    </tr>
   )
 }

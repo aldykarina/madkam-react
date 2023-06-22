@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { getProductById } from "../../services/firebase";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 
 
@@ -9,6 +9,7 @@ import Loader from "../Loader/Loader";
 export default function ItemDetailContainer() {
   const [errors, setErrors] = useState(null)
   const [product, setProduct] = useState(null);
+  let [isloading, setIsLoading] = useState(true);
 
   const { prodId } = useParams();
   useEffect(()=>{
@@ -19,55 +20,32 @@ export default function ItemDetailContainer() {
       .catch(error => {
           setErrors(error.message)
       })
+      .finally( ()=>{setIsLoading(false)})
   }, [prodId])
 
   if (errors) return (
-    <div>
-      <h1>Error</h1>
-      <p>{errors}</p>
-    </div>
-
+    errorProducto()
   )
+
+  function  errorProducto() {
+    swal({
+      title: "Lo siento",
+      text: "El producto no existe",
+      icon: "warning",
+    }); 
+    
+  }
+  
+  
+    
 
   return (
     <div>
-      {product ? <ItemDetail product={product} /> : <Loader/>  }
+      {product ? <ItemDetail product={product} isloading={isloading} /> :  
+      
+      ( isloading ? <Loader/> : (errorProducto(), <Link className="linkInicio" to="/" >Volver a Productos</Link>) )
+      
+      }
     </div>
   )
 }
-
-/* return (
-  <div>
-      <ItemDetail {...product} />
-  </div>
-)
-
-import getProductById from "../../data/datoProductos"
-
-const { prodId } = useParams();
-  useEffect(()=>{
-    getProductById(Number(prodId))
-      .then(response => {
-          setProduct(response)
-      })
-      .catch(error => {
-          setErrors(error.message)
-      })
-  }, [prodId])
-
-
-
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../services/firebase";
-
-    useEffect(()=>{
-    
-    const docRef = doc(db, "productos", prodId);
-    getDoc(docRef)
-      .then((res)=>{
-        setProduct({...res.data(), id: res.id});
-      })
-
-  }, [prodId])
-
-*/

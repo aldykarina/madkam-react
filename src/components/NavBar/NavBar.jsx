@@ -28,9 +28,6 @@ export default function NavBar(){
                             <NavLink  to="/" className="todosProductos"  >Todos los productos</NavLink>
                         </ul>
                     </li>
-                    <li className="nav-item">
-                        <NavLink to="/contacto" className="nav-link">Contacto</NavLink>
-                    </li>
                         <li className="nav-item">
                             <button className="nav-link"> Ingresar</button>
                         </li>                        

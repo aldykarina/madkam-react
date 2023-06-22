@@ -32,11 +32,23 @@ $colors:
     text-align: center;
     color: nth($colors, 1) ;
     background-color: nth($colors, 2);
-    padding: 2px 15px 2px 15px ;
-    margin: 0 0 5px 0;
+    padding: 10px 40px ;
     border-radius: 10px;
+    font-size: 2rem;
     &:hover{
         color: nth($colors, 8);
         background-color: nth($colors, 3);
     }
 }
+
+%botonLink{
+    text-decoration: none;
+    text-align: center;
+    color: nth($colors, 2) ;
+    
+    border-radius: 10px;
+    &:hover{
+        color: nth($colors, 3);
+    }
+}
+

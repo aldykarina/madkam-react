@@ -54,6 +54,7 @@ export default function Cart() {
   }
 
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+
   const handleClick = () => {
     setMostrarFormulario(true);
   };
@@ -62,40 +63,50 @@ export default function Cart() {
     <>
     { totalCount() === 0 ? 
       (
-        <div>
+        <div className="divLinkcito">
           <h1>El carrito esta vacio :/ </h1>
-          <Link to="/" >Productos</Link>
+          <Link className="linkInicio" to="/" >Volver a Productos</Link>
         </div>
       ) : 
       
       (
-        <div>
-          <div className="itemCard">
-            <h1>Carrito</h1>
+        <>
+          <div  className="saludo">
+            <h1>Productos en tu Carrito</h1>
+          </div>
+          
 
-            { cart.map (product => <CartItem key={product.id} {...product}/>)}
+          <table className="cart">
+            <thead className="cartTitle">
+              <tr className="cartRows">
+                <th></th>
+                <th>Producto</th>
+                <th>Precio x un</th>
+                <th>Cantidad</th>
+                <th>Precio Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              { cart.map (product => <CartItem key={product.id} {...product}/>)}
+            </tbody>
+          </table>
 
-            <h3>Precio Total: ${totalPrice()}</h3>
-            <button className='btnDetalle' onClick={clearCartAlert} >Vaciar Carrito</button>
-            
+
+          <div className="cartFinal">
+            <h3>Total a pagar: ${totalPrice()}</h3> 
+            <div className="divVaciar">
+              <button className="btnVaciar" onClick={clearCartAlert} >Vaciar Carrito</button>
+            </div>     
             <button className='btnDetalle' onClick={handleClick}>Finalizar compra</button>
+            {mostrarFormulario && <CheckoutForm onConfirm={handleConfirm} />}
           </div>
 
-          {mostrarFormulario && <CheckoutForm onConfirm={handleConfirm} />}
           
         
-        </div>
+        </>
       )
     }
     </>
   )
 }
-
-/* 
-import CheckoutForm from "../CheckoutForm"
-<Link to="/checkout" >Checkout</Link> 
-
-
-<button onClick={handleConfirm} >Crear orden de compra</button>
-
-*/

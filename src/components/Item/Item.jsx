@@ -1,8 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
 export default function Item({producto}) {
-  
-/*   {id, name, img, price, stock} */
 
   return (
     <article className="itemCard">

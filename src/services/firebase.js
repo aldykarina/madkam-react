@@ -70,16 +70,6 @@ export async function createrOrder(data) {
 }
 
 
-export async function getProductOrder(orderid) {
-
-  const docRef = doc(db, "orders", orderid);
-  const docSnap =  await getDoc(docRef);
-  console.log(docSnap.data())
-  
-  return docSnap.data();  
-}
-
-
 export async function createrOrderWithStockUpdate(data) {
   const orderCollectionRef = collection(db, "orders")
   const batch = writeBatch(db);
@@ -90,7 +80,6 @@ export async function createrOrderWithStockUpdate(data) {
     const docSnap = await getDoc(refDoc);
 
     const { stock } = docSnap.data();
-    console.log(stock);
 
     const stockUpdate = stock - itemInCart.count;
     if (stockUpdate < 0){
