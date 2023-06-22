@@ -63,8 +63,6 @@ export async function getCategoryData(idCat){
 export async function createrOrder(data) {
   const orderCollectionRef = collection(db, "orders")
   const response = await addDoc(orderCollectionRef, data);
-  console.log("Orden creadaa ", response.id)
-
   return response.id
 
 }
