@@ -15,7 +15,7 @@
   <a href="#como-ejecutar-el-proyecto">Ejecutar el proyecto</a> • <a href="#creditos">Creditos</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+<img src="public/assets/madkam_gif.gif" width="600">
 
 ## Como ejecutar el proyecto
 
